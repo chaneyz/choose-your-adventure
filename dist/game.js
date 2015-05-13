@@ -15,15 +15,26 @@ function* chooseYourAdventure() {
 
 	yield adventure.say('You chose a '+ myWeapon);
 
-	var location = yield adventure.choose('Where would you like to go?', 'Tattoine', 'Hoth');
+	var location = yield adventure.choose('Where would you like to go?', 'Tattoine', 'Hoth', 'Party-town');
 
 	if(location === 'Tattoine') {
 		yield adventure.say('You die of dehydration!');
 	}	
 
-	else {
-		yield adventure.say('You freeze to death!')
+	else if(location === 'Hoth'){
+		yield adventure.say('You freeze to death!');
 	}
 
-	yield adventure.say("You died! May the Force be with you!")
+	else if(location === 'Party-town'){
+		yield adventure.say('You party all night!');
+	}
+
+	yield adventure.say("You died! May the Force be with you!");
+
+	// }
+
+	// else(location === 'Party-town'){
+	// yield adventure.say("Party on, dudes!");
+
+	// }
 }
